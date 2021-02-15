@@ -1,3 +1,6 @@
 class ApplicationController < ActionController::Base
-  resources :users
+  def index
+    
+  end
+  
 end
