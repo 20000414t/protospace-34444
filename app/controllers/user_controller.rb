@@ -1,12 +1,8 @@
 class UserController < ApplicationController
-  def index
-    @users = User.all
-  end
-
-  def new
-    @users = User.new
-  end
-
-  def create
-    User.create(user_paarams)
+  validates :email, presence: true
+  validates :password, presence: true
+  validates :name, presence: true
+  validates :profile, presence: true
+  validates :occupation, presence: true
+  validates :position, presence: true
 end
