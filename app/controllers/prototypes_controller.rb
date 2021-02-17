@@ -9,7 +9,7 @@ class PrototypesController < ApplicationController
   end
   def create
     Prototype.create(prototype_params)
-    @prototype = Rrotype.new(prototype_params)
+    @prototype = Prototype.new(prototype_params)
     if @prototype.save
       redirect_to root_path
     else
@@ -18,6 +18,6 @@ class PrototypesController < ApplicationController
   end
   private
   def prototype_params
-    params.require(:prototype).permit(:name, :image, :text)
+    params.require(:prototype).permit(:catch_copy, :image, :text, :user_id)
   end
 end
