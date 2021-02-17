@@ -6,10 +6,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      t.string :password_field,     null: false, default: ""
       t.string :name,               null: false, default: ""
-      t.text   :profile,            "text"
-      t.text   :occupation,         "a"
-      t.text   :position,           "b"
+      t.text   :profile,            null: false
+      t.text   :occupation,         null: false
+      t.text   :position,           null: false
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

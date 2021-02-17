@@ -3,31 +3,7 @@
     <div class="form__wrapper">
       <h2 class="page-heading">新規プロトタイプ投稿</h2>
         <%# 部分テンプレートでフォームを表示する %>
-        <div class="field">
-    <label for="prototype_title">プロトタイプの名称</label><br>
-    <input type="text" name="prototype[title]" id="prototype_title">
-  </div>
-
-  <div class="field">
-    <label for="prototype_catch_copy">キャッチコピー</label>
-    <br>
-  <textarea class="form__text" name="prototype[catch_copy]" id="prototype_catch_copy"></textarea>
-  </div>
-
-  <div class="field">
-  <label for="prototype_image">プロトタイプの画像</label><br>
-  <textarea class="form__text" name="prototype[concept]" id="prototype_concept"></textarea>
-  </div>
-
-  <div class="field">
-   <label for="prototype_image">プロトタイプの画像</label>
-       <br>
-   <input type="file" name="prototype[image]" id="prototype_image">
-  </div>
-
-  <div class="actions">
-    <input type="submit" name="commit" value="保存する" class="form__btn" data-disable-with="保存する">
-  </div>
-    </div>
-  </div>
-</div>
+        <% render partial: "form", locals: { true: true} %>
+     </div>
+     </div>
+   
