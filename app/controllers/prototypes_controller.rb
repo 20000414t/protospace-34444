@@ -5,6 +5,23 @@ class PrototypesController < ApplicationController
     prototype = Prototype.find(params[:id])
   end
  
+  def show
+    @prototype = Prototype.find(params[:id])
+  end
+
+  def edit
+    @prototype = Prototype.find(params[:id])
+  end
+
+  def update
+    prototype = Prototype.find(params[:id])
+    prototype.update(prototype_params)
+  end
+
+  def destoroy
+    prototype = Prototype.find(params[:id])
+    prototype.destoroy
+  end
   
   def new
     @prototype = Prototype.new
