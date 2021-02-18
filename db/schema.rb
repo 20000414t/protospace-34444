@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_02_17_024000) do
     t.text "filed", null: false
     t.text "catch_copy", null: false
     t.text "consept", null: false
-    t.text "image", null: false
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

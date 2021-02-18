@@ -4,7 +4,7 @@ class CreatePrototypes < ActiveRecord::Migration[6.0]
       t.text :filed,         null: false
       t.text :catch_copy,   null: false
       t.text :consept,      null: false
-      t.text :image,        null: false
+      t.integer :user_id
       t.timestamps
     end
   end
