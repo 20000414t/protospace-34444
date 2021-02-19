@@ -1,5 +1,6 @@
 class PrototypesController < ApplicationController
-
+  before_action :set_prototype, only: [:edit, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   def index
     @prototypes = Prototype.all
   end
@@ -11,7 +12,7 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    @prototype = Prototype.find(params[:id])
+    
   end
 
   def update
@@ -22,6 +23,10 @@ class PrototypesController < ApplicationController
   def destroy
     prototype = Prototype.find(params[:id])
     prototype.destroy
+
+    if prototype.destroy
+      redirect_to  prototypes_path
+    end
   end
   
   def new
@@ -39,6 +44,17 @@ class PrototypesController < ApplicationController
   end
   private
   def prototype_params
-   params.require(:prototype).permit( :filed, :catch_copy, :consept, :image).merge(user_id: current_user.id)
+   params.require(:prototype).permit( :filed, :catch_copy, :consept, :image).merge(user_id: current_user.id, )
+  end
+
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
+  end
+
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
