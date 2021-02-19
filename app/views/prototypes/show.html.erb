@@ -10,6 +10,7 @@
         <div class="prototype__manage">
           <%= link_to "編集する",   edit_prototype_path(@prototype.id), class: :prototype__btn, method: :get %>
           <%= link_to "削除する", prototype_path(@prototype.id), class: :prototype__btn, method: :delete%>
+          
         </div>
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
