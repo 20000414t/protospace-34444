@@ -1,10 +1,28 @@
 class PrototypesController < ApplicationController
 
   def index
-    @prototype = Prototype.all
-    prototype = Prototype.find(params[:id])
+    @prototypes = Prototype.all
   end
+
  
+
+  def show
+    @prototype = Prototype.find(params[:id])
+  end
+
+  def edit
+    @prototype = Prototype.find(params[:id])
+  end
+
+  def update
+    prototype = Prototype.find(params[:id])
+    prototype.update(prototype_params)
+  end
+  
+  def destroy
+    prototype = Prototype.find(params[:id])
+    prototype.destroy
+  end
   
   def new
     @prototype = Prototype.new
