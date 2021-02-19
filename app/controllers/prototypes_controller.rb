@@ -1,10 +1,11 @@
 class PrototypesController < ApplicationController
 
   def index
-    @prototype = Prototype.all
-    prototype = Prototype.find(params[:id])
+    @prototypes = Prototype.all
   end
+
  
+
   def show
     @prototype = Prototype.find(params[:id])
   end
