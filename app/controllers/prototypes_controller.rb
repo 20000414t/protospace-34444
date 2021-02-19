@@ -18,10 +18,10 @@ class PrototypesController < ApplicationController
     prototype = Prototype.find(params[:id])
     prototype.update(prototype_params)
   end
-
-  def destoroy
+  
+  def destroy
     prototype = Prototype.find(params[:id])
-    prototype.destoroy
+    prototype.destroy
   end
   
   def new
