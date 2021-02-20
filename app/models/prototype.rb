@@ -2,6 +2,7 @@ class Prototype < ApplicationRecord
   has_many :comments
   belongs_to :user
   has_one_attached :image
+  has_many :comments
        
 
   validates :filed, presence: true
