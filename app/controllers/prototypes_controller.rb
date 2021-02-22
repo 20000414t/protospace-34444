@@ -35,7 +35,7 @@ class PrototypesController < ApplicationController
     prototype.destroy
 
     if prototype.destroy
-      redirect_to  prototypes_path
+      redirect_to  root_path
     end
   end
   

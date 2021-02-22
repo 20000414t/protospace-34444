@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
   def create
     Comment.create(comment_params)
-    redirect_to "/prototype/#{@comment.prototype_id}"
+    redirect_to  prototype_path
+  
   end
 
   private
