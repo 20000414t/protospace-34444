@@ -14,6 +14,9 @@ class PrototypesController < ApplicationController
   end
 
   def edit
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 
   def update
@@ -32,7 +35,7 @@ class PrototypesController < ApplicationController
     prototype.destroy
 
     if prototype.destroy
-      redirect_to  prototypes_path
+      redirect_to  root_path
     end
   end
   
