@@ -5,5 +5,5 @@ root :to => 'prototypes#index'
 resources :prototypes do
   resource :comments
 end
-resource :user, only: :show
+resource :users, only: :show
 end
