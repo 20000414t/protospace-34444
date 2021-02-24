@@ -1,6 +1,7 @@
 class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
+  before_action :usertigattara, only: [:edit, :destroy]
   def index
     @prototypes = Prototype.all
   end
@@ -14,9 +15,6 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    unless user_signed_in?
-      redirect_to action: :index
-    end
   end
 
   def update
@@ -66,6 +64,12 @@ class PrototypesController < ApplicationController
 
   def move_to_index
     unless user_signed_in?
+      redirect_to user_session_path
+    end
+  end
+
+  def usertigattara
+    unless current_user == @prototype.user
       redirect_to action: :index
     end
   end
